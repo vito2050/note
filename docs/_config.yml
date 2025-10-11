@@ -2,3 +2,9 @@ title: Vito 的笔记
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+url: https://vito2050.github.io
+baseurl: /note
+lang: zh-CN
+markdown: kramdown
