@@ -1,0 +1,15 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+  {% assign docs_pages = site.pages | where_exp:'p','p.path contains "docs/"' %}
+  {% for p in docs_pages %}
+  {
+    "title": {{ p.title | jsonify }},
+    "url": "{{ p.url | relative_url }}",
+    "tags": {{ p.tags | jsonify }},
+    "content": {{ p.content | strip_html | normalize_whitespace | truncate: 800 | jsonify }}
+  }{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+]
